@@ -1,0 +1,306 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Oswald:wght@400;600;700&display=swap");
+
+.services-wrapper {
+  max-width: 100%;
+  font-family: "times new roman", sans-serif;
+  color: #2c2c2c;
+  background-color: #ffffe0;
+}
+
+.service-section {
+  position: relative;
+  display: flex;
+  gap: 40px;
+  margin-bottom: 70px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.service-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.service-image-container {
+  flex: 1 1 50%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 18px 0 0 18px;
+}
+
+.service-image {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+  border-radius: 18px 0 0 18px;
+}
+
+.service-section:hover .service-image {
+  transform: scale(1.05);
+}
+
+/* Gradient overlay like gallery */
+.service-image-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(140, 122, 230, 0.4) 0%,
+    rgba(255, 97, 136, 0.4) 100%
+  );
+  opacity: 0.5;
+  transition: opacity 0.4s ease;
+  border-radius: 18px 0 0 18px;
+}
+
+.service-section:hover .service-image-container::after {
+  opacity: 0.25;
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.services-header h2 {
+  font-family: "times new roman";
+  font-size: 42px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.services-header h3 {
+  font-family: "Dancing Script", cursive;
+  font-size: 25px;
+  font-weight: 500;
+  color: #c28f2c;
+  margin-bottom: 20px;
+}
+
+.text {
+  font-size: 1rem;
+  color: black;
+  line-height: 1.6;
+  margin: 15px auto 30px auto;
+  max-width: 800px;
+}
+
+.service-text-container {
+  flex: 1 1 50%;
+  position: relative;
+  display: flex;
+  color: black;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.service-number {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #917f51, #eedb7f);
+  color: #fff;
+  font-weight: 700;
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-number:hover {
+  background: linear-gradient(135deg, #eedb7f, #917f51);
+}
+
+.service-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.service-subtitle {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: #cc9b2e;
+}
+
+.service-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: black;
+  max-width: 460px;
+}
+
+/* Right image layout */
+.right-image {
+  flex-direction: row-reverse;
+}
+
+.right-image .service-image-container {
+  border-radius: 0 18px 18px 0;
+}
+
+.right-image .service-image {
+  border-radius: 0 18px 18px 0;
+}
+
+.right-image .service-image-container::after {
+  border-radius: 0 18px 18px 0;
+}
+
+/* Scroll animations */
+.hidden {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.right-image.hidden {
+  transform: translateX(-50px);
+}
+
+.slide-in-left,
+.slide-in-right {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Responsive images */
+.service-image-container,
+.service-image {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+/* Extra Large Desktops (1400px+) */
+@media (min-width: 1400px) {
+  .services-wrapper { padding: 100px 80px; }
+  .services-header { margin-bottom: 60px; }
+  .services-header h2 { font-size: 50px; margin-bottom: 25px; }
+  .services-header h3 { font-size: 30px; margin-bottom: 25px; }
+  .text { font-size: 1.1rem; margin: 20px auto 40px auto; max-width: 900px; }
+  .service-section { gap: 60px; margin-bottom: 90px; }
+  .service-image { height: 400px; }
+  .service-text-container { padding: 25px 45px; }
+  .service-number { width: 48px; height: 48px; font-size: 21px; margin-bottom: 20px; }
+  .service-title { font-size: 27px; margin-bottom: 15px; }
+  .service-subtitle { font-size: 23px; margin-bottom: 20px; }
+  .service-description { font-size: 20px; line-height: 1.7; max-width: 500px; }
+}
+
+/* Large Desktops (1200px - 1399px) */
+@media (max-width: 1399px) and (min-width: 1200px) {
+  .services-wrapper { padding: 90px 70px; }
+  .services-header { margin-bottom: 50px; }
+  .services-header h2 { font-size: 46px; margin-bottom: 22px; }
+  .services-header h3 { font-size: 28px; margin-bottom: 22px; }
+  .text { font-size: 1.05rem; margin: 18px auto 35px auto; max-width: 850px; }
+  .service-section { gap: 50px; margin-bottom: 80px; }
+  .service-image { height: 300px; }
+  .service-text-container { padding: 20px 30px 20px; }
+  .service-number { width: 46px; height: 46px; font-size: 20px; margin-bottom: 18px; }
+  .service-title { font-size: 26px; margin-bottom: 12px; }
+  .service-subtitle { font-size: 22px; margin-bottom: 18px; }
+  .service-description { font-size: 19px; line-height: 1.65; max-width: 480px; }
+}
+
+/* Standard Laptops (992px - 1199px) */
+@media (max-width: 1199px) and (min-width: 992px) {
+  .services-wrapper { padding: 80px 60px; }
+  .services-header { margin-bottom: 45px; }
+  .services-header h2 { font-size: 48px; margin-bottom: 20px; }
+  .services-header h3 { font-size: 26px; margin-bottom: 20px; }
+  .text { font-size: 1.02rem; margin: 16px auto 32px auto; max-width: 800px; }
+  .service-section { gap: 45px; margin-bottom: 75px; }
+  .service-image { height: 360px; }
+  .service-text-container { padding: 30px 30px; }
+  .service-number { width: 44px; height: 44px; font-size: 19px; margin-bottom: 16px; }
+  .service-title { font-size: 25px; margin-bottom: 12px; }
+  .service-subtitle { font-size: 21px; margin-bottom: 16px; }
+  .service-description { font-size: 18px; line-height: 1.62; max-width: 470px; }
+}
+
+/* Tablets (768px - 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+  .services-wrapper { padding: 70px 50px; }
+  .services-header { margin-bottom: 40px; }
+  .services-header h2 { font-size: 40px; margin-bottom: 18px; }
+  .services-header h3 { font-size: 24px; margin-bottom: 18px; }
+  .text { font-size: 1rem; margin: 15px auto 30px auto; max-width: 750px; }
+  .service-section, .right-image { flex-direction: column; gap: 0; margin-bottom: 60px; }
+  .service-image-container, .right-image .service-image-container { width: 100%; border-radius: 18px 18px 0 0 !important; }
+  .service-image, .right-image .service-image { height: 280px; border-radius: 18px 18px 0 0 !important; }
+  .service-text-container { padding: 30px 30px; text-align: left; }
+  .service-number { width: 42px; height: 42px; font-size: 18px; margin-bottom: 15px; }
+  .service-title { font-size: 24px; margin-bottom: 10px; }
+  .service-subtitle { font-size: 20px; margin-bottom: 15px; }
+  .service-description { font-size: 18px; line-height: 1.6; max-width: 100%; }
+}
+
+/* Small Tablets / Large Mobile (576px - 767px) */
+@media (max-width: 767px) and (min-width: 576px) {
+  .services-wrapper { padding: 60px 40px; }
+  .services-header { margin-bottom: 35px; }
+  .services-header h2 { font-size: 36px; margin-bottom: 16px; }
+  .services-header h3 { font-size: 22px; margin-bottom: 16px; }
+  .text { font-size: 0.98rem; margin: 14px auto 28px auto; max-width: 700px; }
+  .service-section, .right-image { flex-direction: column; gap: 0; margin-bottom: 50px; }
+  .service-image-container, .right-image .service-image-container { width: 100%; border-radius: 16px 16px 0 0 !important; }
+  .service-image, .right-image .service-image { height: 260px; border-radius: 16px 16px 0 0 !important; }
+  .service-text-container { padding: 30px 30px; text-align: center; }
+  .service-number { width: 40px; height: 40px; font-size: 17px; }
+  .service-title { font-size: 23px; margin-bottom: 10px; }
+  .service-subtitle { font-size: 19px; margin-bottom: 14px; }
+  .service-description { font-size: 17px; line-height: 1.58; max-width: 100%; }
+}
+
+/* Mobile Portrait (320px - 575px) */
+@media (max-width: 575px) and (min-width: 320px) {
+  .services-wrapper { padding: 50px 30px; }
+  .services-header { margin-bottom: 30px; }
+  .services-header h2 { font-size: 30px; margin-bottom: 14px; }
+  .services-header h3 { font-size: 20px; margin-bottom: 14px; }
+  .text { font-size: 0.95rem; margin: 12px auto 25px auto; max-width: 100%; }
+  .service-section, .right-image { flex-direction: column; gap: 0; margin-bottom: 40px; }
+  .service-image-container, .right-image .service-image-container { width: 100%; border-radius: 14px 14px 0 0 !important; }
+  .service-image, .right-image .service-image { height: 220px; border-radius: 14px 14px 0 0 !important; }
+  .service-text-container { padding: 25px 25px; text-align: center; }
+  .service-number { width: 40px; height: 40px; font-size: 16px; margin-bottom: 10px; }
+  .service-title { font-size: 22px; margin-bottom: 8px; }
+  .service-subtitle { font-size: 18px; margin-bottom: 12px; }
+  .service-description { font-size: 16px; line-height: 1.55; max-width: 100%; }
+}
+
+/* Extra Small Mobile (below 320px) */
+@media (max-width: 319px) {
+  .services-wrapper { padding: 40px 20px; }
+  .services-header { margin-bottom: 20px; }
+  .services-header h2 { font-size: 26px; margin-bottom: 12px; }
+  .services-header h3 { font-size: 18px; margin-bottom: 12px; }
+  .text { font-size: 16px; margin: 10px auto 22px auto; max-width: 100%; }
+  .service-section, .right-image { flex-direction: column; gap: 0; margin-bottom: 35px; }
+  .service-image-container, .right-image .service-image-container { width: 100%; border-radius: 12px 12px 0 0 !important; }
+  .service-image, .right-image .service-image { height: 200px; border-radius: 12px 12px 0 0 !important; }
+  .service-text-container { padding: 20px 20px; text-align: center; }
+  .service-number { width: 40px; height: 40px; font-size: 16px; margin-bottom: 10px; }
+  .service-title { font-size: 22px; margin-bottom: 8px; }
+  .service-subtitle { font-size: 18px; margin-bottom: 10px; }
+  .service-description { font-size: 16px; line-height: 1.5; max-width: 100%; }
+}

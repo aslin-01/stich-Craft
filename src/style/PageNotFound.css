@@ -1,0 +1,127 @@
+/* ============================
+   PAGE NOT FOUND - BASE STYLE
+============================ */
+.pnf-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  font-family: "times new roman", sans-serif;
+  color: black;
+  padding: 20px;
+  background-color: #ffffe0;
+}
+
+.pnf-h1 {
+font-family: 'Times New Roman', Times, serif;
+color: #917f51;
+  margin: 0;
+}
+
+.pnf-h2 {
+  font-size: 32px;
+  margin: 10px 0;
+}
+
+.pnf-p {
+  font-size: 19px;
+  margin-bottom: 20px;
+}
+.pnf-button {
+  padding: 8px 20px;
+  font-size: 20px;
+  font-family: "Times New Roman", serif;
+  font-weight: 600;
+  border: none;
+  background: linear-gradient(180deg, #917f51, #eedb7f);
+  color: white;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.pnf-button:hover {
+  background: linear-gradient(180deg, #eedb7f, #917f51);
+  color: black;
+  transform: scale(1.03);
+}
+
+
+/* ============================
+   RESPONSIVE BREAKPOINTS
+============================ */
+
+/* Extra Large Desktop (≥1400px) */
+@media (min-width: 1400px) {
+       .pnf-container { padding: 100px 80px; }
+    .pnf-container { padding: 40px; }
+  .pnf-h1 { font-size: 350px; line-height: 360px; }
+  .pnf-h2 { font-size: 40px; }
+  .pnf-p { font-size: 22px; }
+  .pnf-button { font-size: 19px; padding: 12px 28px; }
+}
+
+/* Large Desktop (1200px–1399px) */
+@media (max-width: 1399px) and (min-width: 1200px) {
+       /* .pnf-container { padding-bottom:100px; } */
+  .pnf-h1 { font-size: 300px; line-height: 310px; }
+  .pnf-h2 { font-size: 37px; }
+  .pnf-p { font-size: 21px; }
+  .pnf-button { font-size: 19px; padding: 12px 26px; }
+}
+
+/* Laptop (992px–1199px) */
+@media (max-width: 1199px) and (min-width: 992px) {
+       /* .pnf-container { padding: 80px 60px; } */
+  .pnf-h1 { font-size: 250px; line-height: 260px; }
+  .pnf-h2 { font-size: 32px; }
+  .pnf-p { font-size: 19px; }
+  .pnf-button { font-size: 18px; padding: 10px 25px; }
+}
+
+/* Tablet Landscape (768px–991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+       /* .pnf-container { padding: 70px 50px; } */
+  .pnf-h1 { font-size: 200px; line-height: 210px; }
+  .pnf-h2 { font-size: 29px; }
+  .pnf-p { font-size: 18px; }
+  .pnf-button { font-size: 18px; padding: 10px 22px; }
+}
+
+/* Tablet Portrait / Large Mobile (576px–767px) */
+@media (max-width: 767px) and (min-width: 576px) {
+       /* .pnf-container { padding: 60px 40px; } */
+  .pnf-h1 { font-size: 150px; line-height: 160px; }
+  .pnf-h2 { font-size: 25px; }
+  .pnf-p { font-size: 17px; }
+  .pnf-button { font-size: 17px; padding: 10px 20px; }
+}
+
+/* Mobile Portrait (320px–575px) */
+@media (max-width: 575px) and (min-width: 320px) {
+       /* .pnf-container { padding: 50px 30px; } */
+  .pnf-h1 { font-size: 80px; line-height: 90px; }
+  .pnf-h2 { font-size: 22px; }
+  .pnf-p { font-size: 17px; }
+  .pnf-button { font-size: 17px; padding: 9px 18px; border-radius: 6px; }
+}
+
+/* Extra Small Mobile (<320px) */
+@media (max-width: 319px) {
+    .pnf-container { padding: 40px 20px; }
+  .pnf-h1 { font-size: 64px; line-height: 70px; }
+  .pnf-h2 { font-size: 19px; }
+  .pnf-p { font-size: 15px; }
+  .pnf-button { font-size: 16px; padding: 8px 15px; border-radius: 5px; }
+}
+
+/* Optional Ultra-Wide 4K (≥1800px) */
+@media (min-width: 1800px) {
+       .pnf-container { padding: 110px 90px; }
+  .pnf-h1 { font-size: 400px; line-height: 410px; }
+  .pnf-h2 { font-size: 48px; }
+  .pnf-p { font-size: 24px; }
+  .pnf-button { font-size: 20px; padding: 14px 30px; }
+}

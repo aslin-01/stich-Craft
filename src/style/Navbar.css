@@ -1,0 +1,321 @@
+/* ===============================
+   Navbar Container + Logo Animation
+================================= */
+.logo-wrapper {
+  position: relative;
+  width: 45px;
+  height: 45px;
+}
+
+.logo-animate {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+  z-index: 3;
+  animation: logo-pulse 2s infinite ease-in-out;
+}
+
+@keyframes logo-pulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(1.03);
+    filter: brightness(1.2);
+  }
+}
+
+.orbit-double {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  z-index: 2;
+  pointer-events: none;
+  border-top: 2px solid gold;
+  border-bottom: 2px solid rgba(255, 215, 0, 0.4);
+  animation: rotate-orbit 3s linear infinite;
+}
+
+@keyframes rotate-orbit {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.logo-wrapper:hover .logo-animate {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 8px gold) brightness(1.2);
+}
+
+/* Navbar Base */
+.navbar-custom {
+  background: #0a0a0a;
+  padding: 18px 35px;
+  position: sticky;
+  color: #fff;
+  top: 0;
+  z-index: 1000;
+  font-weight: 600;
+  font-size: 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Times New Roman", Times, serif !important;
+  transition: background 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Nav Links */
+.nav-link-animate {
+  position: relative;
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 17px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 18px;
+  padding: 8px 14px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-family: "Times New Roman", Times, serif;
+  transition: all 0.3s ease;
+}
+
+.nav-link-animate:hover,
+.nav-link-animate:focus {
+  color: #ffd700 !important;
+  transform: scale(1.05);
+}
+
+.nav-link-animate::after { display: none; }
+
+.nav-link-animate.active {
+  font-weight: 500;
+  color: black !important;
+  background: linear-gradient(180deg, #917f51, #eedb7f);
+  padding: 8px 20px !important;
+  border-radius: 45px;
+  transform: scale(1.05);
+  display: inline-block; /* ✅ makes gradient wrap text */
+  width: auto; /* ✅ prevents full width */
+}
+
+/* ===============================
+   RESPONSIVE BREAKPOINTS
+   (Matches About section)
+================================= */
+
+/* Extra Small Mobile (<320px) */
+@media (max-width: 319px) {
+  .navbar-custom {
+    padding: 6px 10px;
+  }
+
+  .navbar-collapse {
+    margin-top: 12px; /* ✅ adds gap below logo */
+    text-align: center;
+  }
+
+  .nav-link-animate {
+    font-size: 12px;
+    margin: 4px 0;
+    padding: 5px 8px;
+    display: inline-block; /* ✅ keeps width tight around text */
+    text-align: center;
+    border-radius: 35px;
+    transition: all 0.3s ease;
+  }
+
+  /* ✅ gradient only wraps text, not full width */
+  .nav-link-animate.active {
+    background: linear-gradient(180deg, #917f51, #eedb7f);
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 35px;
+    display: inline-block;
+   /* ✅ no full-width stretch */
+  }
+
+  .logo-wrapper {
+    width: 32px;
+    height: 32px;
+  }
+
+  .orbit-double {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+
+/* Mobile Portrait (320px - 575px) */
+@media (max-width: 575px) and (min-width: 320px) {
+  .navbar-custom {
+    padding: 8px 15px;
+  }
+  .navbar-collapse {
+    margin-top: 25px; /* ✅ space below logo */
+    text-align: center;
+  }
+  .nav-link-animate {
+    font-size: 13px;
+    margin: 6px 0;
+    padding: 6px 10px;
+    display: inline-block; /* ✅ prevents full width */
+    text-align: center;
+  }
+  .nav-link-animate.active {
+    display: inline-block; /* ✅ ensures button-style background */
+    width: auto;
+  }
+  .logo-wrapper {
+    width: 35px;
+    height: 35px;
+  }
+  .orbit-double {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* Large Mobile & Small Tablets (576px - 767px) */
+@media (max-width: 767px) and (min-width: 576px) {
+  .navbar-custom {
+    padding: 10px 20px;
+  }
+  .navbar-collapse {
+    margin-top: 30px; /* ✅ adds space below logo */
+    text-align: center;
+  }
+  .nav-link-animate {
+    font-size: 14px;
+    margin: 8px 0;
+    padding: 8px 12px;
+    display: inline-block; /* ✅ wraps text only */
+    text-align: center;
+  }
+  .nav-link-animate.active {
+    display: inline-block;
+    width: auto;
+  }
+  .logo-wrapper {
+    width: 38px;
+    height: 38px;
+  }
+  .orbit-double {
+    width: 52px;
+    height: 52px;
+  }
+}
+
+/* Tablets (768px - 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+  .navbar-custom {
+    padding: 12px 25px;
+  }
+  .navbar-collapse {
+    margin-top: 30px; /* ✅ small space below logo */
+    text-align: center;
+  }
+  .nav-link-animate {
+    font-size: 15px;
+    margin: 0 12px;
+    padding: 8px 10px;
+    display: inline-block; /* ✅ fix background width */
+  }
+  .nav-link-animate.active {
+    width: auto;
+  }
+  .logo-wrapper {
+    width: 40px;
+    height: 40px;
+  }
+  .orbit-double {
+    width: 55px;
+    height: 55px;
+  }
+}
+
+/* Laptops (992px - 1199px) */
+@media (max-width: 1199px) and (min-width: 992px) {
+  .navbar-custom {
+    padding: 14px 30px;
+  }
+  .nav-link-animate {
+    font-size: 16px;
+    margin: 0 14px;
+    padding: 8px 12px;
+  }
+  .logo-wrapper {
+    width: 42px;
+    height: 42px;
+  }
+  .orbit-double {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+/* Large Desktops (1200px - 1399px) */
+@media (max-width: 1399px) and (min-width: 1200px) {
+  .navbar-custom {
+    padding: 15px 35px;
+  }
+  .nav-link-animate {
+    font-size: 17px;
+    margin: 0 16px;
+  }
+  .logo-wrapper {
+    width: 46px;
+    height: 46px;
+  }
+  .orbit-double {
+    width: 58px;
+    height: 58px;
+  }
+}
+
+/* Extra Large (1400px - 1599px) */
+@media (max-width: 1599px) and (min-width: 1400px) {
+  .navbar-custom {
+    padding: 16px 40px;
+  }
+  .nav-link-animate {
+    font-size: 18px;
+    margin: 0 20px;
+    padding: 10px 16px;
+  }
+  .logo-wrapper {
+    width: 50px;
+    height: 50px;
+  }
+  .orbit-double {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* Ultra Large (1600px+) */
+@media (min-width: 1600px) {
+  .navbar-custom {
+    padding: 20px 60px;
+  }
+  .nav-link-animate {
+    font-size: 20px;
+    margin: 0 25px;
+    padding: 12px 18px;
+  }
+  .logo-wrapper {
+    width: 55px;
+    height: 55px;
+  }
+  .orbit-double {
+    width: 68px;
+    height: 68px;
+  }
+}

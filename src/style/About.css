@@ -1,0 +1,899 @@
+/* ===========================
+   ABOUT PAGE MAIN BASE (Mobile-First)
+=========================== */
+.about-new {
+  max-width: 1200px;
+  margin: 0 auto;
+    font-family: "Times New Roman", Times, serif;
+  color: #333;
+  position: relative;
+}
+
+.about-page {
+  background: #ffffe0;
+}
+
+/* Main Header */
+.about-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.about-header h2 {
+  font-size: 42px;
+  color: black;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.about-subtitle {
+  font-size: 18px;
+  color: black;
+  margin-top: 10px;
+}
+
+/* STORY SECTION */
+.about-story {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.story-image {
+  flex: 0 0 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.story-image img {
+  width: 100%;
+  max-width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 20px rgba(194, 143, 44, 0.3);
+  transition: transform 0.5s ease, filter 0.5s ease, box-shadow 0.5s ease;
+  animation: floatImg 4s ease-in-out infinite;
+}
+
+.story-image img:hover {
+  transform: scale(1.08) rotate(-2deg);
+  filter: brightness(1.1) saturate(1.15);
+}
+
+@keyframes floatImg {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.02);
+  }
+}
+
+.story-text {
+  flex: 0 0 50%;
+}
+
+.story-text h2 {
+  font-size: 29px;
+  color: #cc9b2e;
+  margin-bottom: 15px;
+}
+
+.story-text h2.color {
+  color: black;
+  font-weight: 600;
+}
+
+.story-text p {
+  font-size: 14px;
+  line-height: 27.2px;
+  margin-bottom: 25px;
+  color: black;
+}
+
+.story-text {
+  flex: 1 1 450px;
+}
+
+.about-values {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.value-card {
+  background: #f9f9f6;
+  text-align: center;
+  padding: 25px 20px;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+.value-icon {
+  font-size: 40px;
+  color: #cc9b2e;
+  margin-bottom: 15px;
+}
+
+.value-card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #cc9b2e;
+  font-weight: 500;
+}
+
+.value-card p {
+  font-size: 16px;
+  color: black;
+}
+
+/* WHY CHOOSE US - TIMELINE */
+.why-choose-us-timeline {
+  position: relative;
+  margin-top: 60px;
+}
+
+.why-choose-us-timeline h2 {
+  text-align: center;
+  font-size: 40px;
+  color: black;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.why-subtitle {
+  text-align: center;
+  font-size: 18px;
+  color: black;
+  margin-bottom: 50px;
+}
+
+.timeline-container {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  width: 4px;
+  background: linear-gradient(180deg, #917f51, #eedb7f);
+  top: 0;
+  bottom: 0;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  width: 45%;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+  transform: translateX(-50px) translateY(50px);
+}
+
+.timeline-item.right {
+  left: 55%;
+  text-align: left;
+  transform: translateX(50px) translateY(50px);
+}
+
+.timeline-item.show {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+
+.timeline-number {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(180deg, #917f51, #eedb7f);
+  color: #fff;
+  font-weight: bold;
+  font-size: 19.2px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 20px;
+}
+
+.timeline-number:hover {
+  background: linear-gradient(180deg, #eedb7f, #917f51);
+  color: black;
+}
+
+.timeline-item.left .timeline-number {
+  right: -25px;
+}
+
+.timeline-item.right .timeline-number {
+  left: -25px;
+}
+
+.timeline-content {
+  background: #fbfbfa;
+  padding: 20px;
+  border-radius: 15px;
+  display: inline-block;
+  max-width: 95%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.timeline-content h4 {
+  font-size: 17px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #cc9b2e;
+}
+
+.timeline-content p {
+  font-size: 14px;
+  color: black;
+  line-height: 24px;
+}
+/* ===========================
+ /* Extra Small Devices (<320px) */
+@media (max-width: 319px) {
+  .about-page {
+    padding: 40px 20px;
+  }
+  .about-header {
+    text-align: center;
+  }
+  .about-header h2 {
+    font-size: 24px;
+    line-height: 34px;
+  }
+  .about-subtitle {
+    font-size: 16px;
+    text-align: center;
+  }
+  .about-story {
+    gap: 20px;
+    flex-direction: column;
+    text-align: center;
+  }
+  .story-image {
+    display: flex;
+    justify-content: center;
+    flex: 0 0 100%;
+  }
+  .story-image img {
+    width: 200px;
+    height: 200px;
+  }
+  .story-text {
+    flex: 0 0 100%;
+    text-align: center;
+  }
+  .story-text h2 {
+    font-size: 18px;
+  }
+  .story-text p {
+    font-size: 16px;
+  }
+  .about-values {
+    text-align: center;
+  }
+  .value-card h3 {
+    font-size: 18px;
+  }
+  .value-card p {
+    font-size: 16px;
+  }
+ 
+  /* Timeline responsive adjustments */
+  .why-choose-us-timeline {
+    text-align: center;
+  }
+  .why-choose-us-timeline h2 {
+    font-size: 28px;
+  }
+  .why-subtitle {
+    font-size: 16px;
+  }
+
+  .timeline-container {
+    max-width: 100%;
+    padding: 10px 5px;
+  }
+
+  .timeline-line {
+    left: 30px;
+    width: 1px;
+  }
+
+  .timeline-item,
+  .timeline-item.left,
+  .timeline-item.right {
+    width: 100%;
+    left: 40px !important;
+    text-align: left !important;
+    transform: none;
+    opacity: 1;
+    padding: 15px 20px;
+  }
+  /* .timeline-number {
+  font-size: 20px;
+  width: 34px;
+  height: 34px;
+} */
+
+
+  .timeline-number {
+    position: relative;
+    font-size: 16px;
+    width: 25px;
+    height: 25px;
+    left: 0 !important;
+    right: auto !important;
+    top: 0;
+    margin-bottom: 10px;
+  }
+
+  .timeline-content {
+    max-width: 100%;
+  }
+
+  .timeline-content h4 {
+    font-size: 18px;
+  }
+
+  .timeline-content p {
+    font-size: 16px;
+  }
+  
+  .about-curvise {
+    font-size: 19px;
+    font-family: "Dancing Script";
+    color: #cc9b2e;
+    padding-bottom: 20px;
+    text-align: center;
+  }
+}
+
+/* Mobile Portrait (320px - 575px) */
+@media (min-width: 320px) and (max-width: 575px) {
+  .about-page {
+    padding: 40px 20px;
+  }
+  .about-header {
+    text-align: center;
+  }
+  .about-header h2 {
+    font-size: 28px;
+    line-height: 38px;
+  }
+  .about-subtitle {
+    font-size: 17px;
+    text-align: center;
+  }
+  .about-story {
+    gap: 30px;
+    flex-direction: column;
+    text-align: center;
+  }
+  .story-image {
+    display: flex;
+    justify-content: center;
+    flex: 0 0 100%;
+  }
+  .story-image img {
+    width: 280px;
+    height: 280px;
+  }
+  .story-text {
+    flex: 0 0 100%;
+    text-align: center;
+  }
+  .story-text h2 {
+    font-size: 20px;
+  }
+  .story-text p {
+    font-size: 17px;
+  }
+  .about-values {
+    text-align: center;
+  }
+  .value-card h3 {
+    font-size: 20px;
+  }
+  .value-card p {
+    font-size: 17px;
+  }
+
+  /* Timeline responsive adjustments */
+  .why-choose-us-timeline {
+    text-align: center;
+  }
+  .why-choose-us-timeline h2 {
+    font-size: 28px;
+  }
+  .why-subtitle {
+    font-size: 17px;
+  }
+
+  .timeline-container {
+    max-width: 90%;
+    padding: 10px 5px;
+  }
+
+  .timeline-line {
+    left: 30px;
+    width: 1px;
+  }
+
+  .timeline-item,
+  .timeline-item.left,
+  .timeline-item.right {
+    width: 100%;
+    left: 40px !important;
+    text-align: left !important;
+    transform: none;
+    opacity: 1;
+    padding: 15px 15px;
+  }
+  /* .timeline-number {
+  font-size: 20px;
+  width: 34px;
+  height: 34px;
+} */
+
+
+  .timeline-number {
+    position: relative;
+    font-size: 18px;
+    width: 30px;
+    height: 30px;
+    left: 0 !important;
+    right: auto !important;
+    top: 0;
+    margin-bottom: 10px;
+  }
+
+  .timeline-content {
+    max-width: 100%;
+  }
+
+  .timeline-content h4 {
+    font-size: 19px;
+  }
+
+  .timeline-content p {
+    font-size: 17px;
+  }
+
+  .about-curvise {
+    font-size: 20px;
+    font-family: "Dancing Script";
+    color: #cc9b2e;
+    padding-bottom: 20px;
+    text-align: center;
+  }
+}
+/* Small Tablets & Large Mobile (576px - 767px) */
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .about-page {
+    padding: 50px 30px;
+  }
+  .about-header {
+    text-align: center;
+  }
+  .about-header h2 {
+    font-size: 32px;
+    line-height: 42px;
+  }
+  .about-subtitle {
+    font-size: 17px;
+    text-align: center;
+  }
+  .about-story {
+    gap: 40px;
+    flex-direction: row;
+  }
+  .story-image {
+    flex: 0 0 50%;
+    display: flex;
+    justify-content: center;
+  }
+  .story-image img {
+    max-width: 300px;
+    height: 300px;
+  }
+  .story-text {
+    flex: 0 0 50%;
+    text-align: left;
+  }
+  .story-text h2 {
+    font-size: 22px;
+  }
+  .story-text p {
+    font-size: 17px;
+  }
+  .about-values {
+    text-align: center;
+  }
+  .value-card h3 {
+    font-size: 20px;
+  }
+  .value-card p {
+    font-size: 16px;
+  }
+
+  /* Timeline responsive adjustments */
+  .why-choose-us-timeline {
+    text-align: center;
+  }
+  .why-choose-us-timeline h2 {
+    font-size: 28px;
+  }
+  .why-subtitle {
+    font-size: 17px;
+  }
+
+  .timeline-container {
+    max-width: 100%;
+    padding: 10px 5px;
+  }
+
+  .timeline-line {
+    left: 20px;
+    width: 3px;
+  }
+
+  .timeline-item,
+  .timeline-item.left,
+  .timeline-item.right {
+    width: 100%;
+    left: 40px !important;
+    text-align: left !important;
+    transform: none;
+    opacity: 1;
+    padding: 15px 20px;
+  }
+ 
+
+  .timeline-number {
+    position: relative;
+    font-size: 20px;
+    width: 34px;
+    height: 34px;
+    left: 0 !important;
+    right: auto !important;
+    top: 0;
+    margin-bottom: 10px;
+  }
+
+  .timeline-content {
+    max-width: 100%;
+  }
+
+  .timeline-content h4 {
+    font-size: 20px;
+  }
+
+  .timeline-content p {
+    font-size: 17px;
+  }
+
+  /* End of timeline adjustments */
+
+  .about-curvise {
+    font-size: 22px;
+    font-family: "Dancing Script";
+    color: #cc9b2e;
+    padding-bottom: 20px;
+    text-align: center;
+  }
+}
+
+/* Tablets (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .about-page {
+    padding: 60px 40px;
+  }
+  .about-header {
+    text-align: center;
+  }
+  .about-header h2 {
+    font-size: 35px;
+    line-height: 45px;
+  }
+  .about-subtitle {
+    font-size: 18px;
+    text-align: center;
+  }
+  .about-story {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .story-image,
+  .story-text {
+    flex: 0 0 30%;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .story-image img {
+    width: 300px;
+    height: 300px;
+  }
+  .story-text h2 {
+    font-size: 24px;
+  }
+  .story-text p {
+    font-size: 18px;
+  }
+  .about-values {
+    text-align: center;
+  }
+  .value-card h3 {
+    font-size: 22px;
+  }
+  .value-card p {
+    font-size: 18px;
+  }
+ .timeline-container {
+   width: 100%;
+    padding: 10px 5px;
+  }
+  
+  .why-choose-us-timeline {
+    text-align: center;
+  }
+  .why-choose-us-timeline h2 {
+    font-size: 38px;
+  }
+  .why-subtitle {
+    font-size: 18px;
+  }
+  .timeline-content h4 {
+    font-size: 21px;
+  }
+  .timeline-content p {
+    font-size: 18px;
+  }
+  .about-curvise {
+    font-size: 24px;
+    font-family: "Dancing Script";
+    color: #cc9b2e;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+}
+
+/* Laptops (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .about-page {
+    padding: 70px 50px;
+  }
+  .about-header {
+    text-align: center;
+  }
+  .about-header h2 {
+    font-size: 38px;
+    line-height: 48px;
+  }
+  .about-subtitle {
+    font-size: 19px;
+    text-align: center;
+  }
+  .about-story {
+    flex-direction: row;
+    gap: 50px;
+  }
+  .story-image,
+  .story-text {
+    flex: 0 0 46%;
+    text-align: left;
+  }
+  .story-image img {
+    max-width: 380px;
+    height: 380px;
+  }
+  .story-text h2 {
+    font-size: 25px;
+  }
+  .story-text p {
+    font-size: 19px;
+  }
+  .about-values {
+    text-align: center;
+  }
+  .value-card h3 {
+    font-size: 22px;
+  }
+  .value-card p {
+    font-size: 19px;
+  }
+  .why-choose-us-timeline {
+    text-align: center;
+  }
+  .why-choose-us-timeline h2 {
+    font-size: 40px;
+  }
+  .why-subtitle {
+    font-size: 19px;
+  }
+  .timeline-content h4 {
+    font-size: 23px;
+  }
+  .timeline-content p {
+    font-size: 19px;
+  }
+  .about-curvise {
+    font-size: 28px;
+    font-family: "Dancing Script";
+    color: #cc9b2e;
+    padding-bottom: 12px;
+    text-align: center;
+  }
+}
+
+/* Large Desktops (1200px - 1399px) */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .about-page {
+    padding: 80px 60px;
+  }
+  .about-header {
+    text-align: center;
+  }
+  .about-header h2 {
+    font-size: 40px;
+    line-height: 50px;
+  }
+  .about-subtitle {
+    font-size: 20px;
+    text-align: center;
+  }
+  .about-story {
+    flex-direction: row;
+    gap: 50px;
+  }
+  .story-image,
+  .story-text {
+    flex: 0 0 46%;
+    text-align: left;
+  }
+  .story-image img {
+    max-width: 380px;
+    height: 380px;
+  }
+  .story-text h2 {
+    font-size: 28px;
+  }
+  .story-text p {
+    font-size: 20px;
+  }
+  .about-values {
+    text-align: center;
+  }
+  .value-card h3 {
+    font-size: 22px;
+  }
+  .value-card p {
+    font-size: 20px;
+  }
+  .why-choose-us-timeline {
+    text-align: center;
+  }
+  .why-choose-us-timeline h2 {
+    font-size: 42px;
+  }
+  .why-subtitle {
+    font-size: 20px;
+  }
+  .timeline-content h4 {
+    font-size: 24px;
+  }
+  .timeline-content p {
+    font-size: 20px;
+  }
+  .about-curvise {
+    font-size: 28px;
+    font-family: "Dancing Script";
+    color: #cc9b2e;
+    padding-bottom: 18px;
+    text-align: center;
+  }
+}
+
+/* Extra Large Desktops (≥1400px) */
+@media (min-width: 1400px) {
+  .about-page {
+    padding: 90px 70px;
+  }
+  .about-header {
+    text-align: center;
+  }
+  .about-header h2 {
+    font-size: 48px;
+    line-height: 58px;
+  }
+  .about-subtitle {
+    font-size: 20px;
+    text-align: center;
+  }
+  .about-story {
+    flex-direction: row;
+    gap: 60px;
+  }
+  .story-image,
+  .story-text {
+    flex: 0 0 46%;
+    text-align: left;
+  }
+  .story-image img {
+    max-width: 400px;
+    height: 400px;
+  }
+  .story-text h2 {
+    font-size: 30px;
+  }
+  .story-text p {
+    font-size: 20px;
+  }
+  .about-values {
+    text-align: left;
+  }
+  .value-card h3 {
+    font-size: 24px;
+  }
+  .value-card p {
+    font-size: 20px;
+  }
+  .why-choose-us-timeline {
+    text-align: left;
+  }
+  .why-choose-us-timeline h2 {
+    font-size: 44px;
+  }
+  .why-subtitle {
+    font-size: 20px;
+  }
+  .timeline-content h4 {
+    font-size: 24px;
+  }
+  .timeline-content p {
+    font-size: 20px;
+  }
+  .about-curvise {
+    font-size: 30px;
+    font-family: "Dancing Script";
+    color: #cc9b2e;
+    padding-bottom: 20px;
+    text-align: center;
+  }
+}

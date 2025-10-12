@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap");
+
+.banner-future {
+  position: relative;
+  min-height: 100vh;
+  max-width: 100%;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Times New Roman", Times, serif;
+  overflow: hidden;
+  padding: 60px 0;
+  z-index: 1; /* Ensure children stay above background overlay */
+}
+
+/* Background image with colored overlay */
+.banner-future {
+  position: relative;
+  background: url("/src/assets/bg-01.jpg") center/cover no-repeat;
+  z-index: 0;
+}
+
+.banner-future::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgb(0, 0, 0, 10)
+,
+   rgba(204, 155, 46, 0.5)
+
+      ); /* overlay gradient */
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+/* Inner content */
+.banner-inner {
+  display: flex;
+  width: 100%;
+  max-width: 1300px;
+  padding: 0 40px;
+  z-index: 2; /* content above overlay */
+  gap: 50px;
+}
+
+/* Text side */
+.banner-text {
+  flex: 1;
+  color: #cc9b2e;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.banner-text h1 {
+  font-size: clamp(38px, 6vw, 90px);
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.banner-text p {
+  font-size: 20px;
+  color: white;
+  margin-bottom: 35px;
+  max-width: 500px;
+}
+
+/* Button */
+.btn-small {
+  width: 30%;
+  max-width: 250px;
+  min-width: 100px;
+  padding: 10px 20px;
+  border-radius: 45px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  background: linear-gradient(180deg, #917f51, #eedb7f);
+  color: black !important;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(145, 127, 81, 0.08);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-small:hover,
+.btn-small:focus {
+  box-shadow: 0 4px 16px rgba(145, 127, 81, 0.16);
+  background: linear-gradient(180deg, #eedb7f, #917f51);
+}
+
+/* Image side */
+.banner-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.image-circle {
+  width: 420px;
+  height: 420px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  transform: scale(1);
+  transition: transform 0.5s ease;
+  animation: fadeRotate 1.5s ease forwards;
+}
+
+.image-circle:hover {
+  transform: scale(1.05);
+}
+
+.image-circle::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 60%);
+  transform: rotate(25deg);
+  animation: shineMove 5s infinite linear;
+}
+
+.image-circle::after {
+  content: "";
+  position: absolute;
+  inset: -15px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  animation: rotateRing 12s linear infinite;
+}
+
+@keyframes shineMove {
+  from { transform: translateX(-100%) rotate(25deg); }
+  to { transform: translateX(100%) rotate(25deg); }
+}
+
+@keyframes rotateRing {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(100px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeRotate {
+  from { opacity: 0; transform: rotate(-15deg) scale(1.2); }
+  to { opacity: 1; transform: rotate(0deg) scale(1); }
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+
+/* <320px */
+@media (max-width: 319px) {
+  .banner-future { padding: 25px 10px; }
+  .banner-inner { flex-direction: column; text-align: center; gap: 20px; }
+  .banner-text { align-items: center; }
+  .banner-text h1 { font-size: 20px; }
+  .banner-text p { font-size: 12px; }
+  .btn-small { width: 25%; font-size: 0.8rem; }
+  .image-circle { width: 200px; height: 200px; }
+}
+
+/* 320px - 575px */
+@media (max-width: 575px) and (min-width: 320px) {
+  .banner-future { padding: 30px 15px; }
+  .banner-inner { flex-direction: column; text-align: center; gap: 25px; }
+  .banner-text { align-items: center; }
+  .banner-text h1 { font-size: 24px; }
+  .banner-text p { font-size: 14px; }
+  .btn-small { width: 25%;padding: 5px 0; font-size: 0.85rem; }
+  .image-circle { width: 250px; height: 250px; }
+}
+
+/* 576px - 767px */
+@media (max-width: 767px) and (min-width: 576px) {
+  .banner-future { padding: 40px 20px; }
+  .banner-inner { flex-direction: column; text-align: center; gap: 30px; }
+  .banner-text { align-items: center; }
+  .banner-text h1 { font-size: 28px; }
+  .banner-text p { font-size: 15px; }
+  .btn-small { width: 25%; padding: 7px 0; font-size: 0.9rem; }
+  .image-circle { width: 300px; height: 300px; }
+}
+
+/* 768px - 991px */
+@media (max-width: 991px) and (min-width: 768px) {
+  .banner-future { padding: 50px 30px; }
+  .banner-inner { flex-direction: column; text-align: center; gap: 35px; }
+  .banner-text { align-items: center; }
+  .banner-text h1 { font-size: 32px; }
+  .banner-text p { font-size: 16px; }
+  .btn-small { width: 25%; padding: 9px 0; font-size: 0.95rem; }
+  .image-circle { width: 350px; height: 350px; }
+}
+
+/* 992px - 1199px */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .banner-future { padding: 50px 30px; }
+  .banner-inner { flex-direction: row; gap: 40px; }
+  .banner-text { align-items: flex-start; text-align: left; }
+  .banner-text h1 { font-size: 36px; }
+  .banner-text p { font-size: 16px; }
+  .btn-small { 
+    width: 30%; 
+    padding: 10px 15px; 
+    font-size: 0.95rem; 
+  }
+  .image-circle { width: 350px; height: 350px; }
+}
+/* 1200px - 1399px */
+@media (max-width: 1399px) and (min-width: 1200px) {
+  .banner-future { padding: 70px 50px; }
+  .banner-inner { gap: 50px; }
+  .btn-small { width: 25%; padding: 10px 0; font-size: 1.05rem; }
+  .image-circle { width: 420px; height: 420px; }
+}
+
+/* 1400px+ */
+@media (min-width: 1400px) {
+  .banner-future { padding: 80px 60px; }
+  .banner-inner { gap: 60px; }
+  .btn-small { width: 25%;padding: 10px 0; font-size: 1.1rem; }
+  .image-circle { width: 480px; height: 480px; }
+}
