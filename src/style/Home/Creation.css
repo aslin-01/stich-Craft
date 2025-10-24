@@ -4,8 +4,8 @@
   color: #0a0a0a;
   position: relative;
   overflow: hidden;
-  padding: 100px 120px; /* Same as About section */
-  gap: 60px; /* Same as About section */
+  padding: 100px 120px;
+  gap: 60px;
 }
 
 .gallery__content {
@@ -19,6 +19,7 @@
   font-size: 30px;
   color: #c28f2c;
   margin-bottom: 12px;
+  min-font-size: 16px;
 }
 
 .gallery__title {
@@ -29,6 +30,7 @@
   margin-bottom: 10px;
   color: #222;
   letter-spacing: 1px;
+  min-font-size: 16px;
 }
 
 .color {
@@ -42,6 +44,7 @@
   margin-bottom: 40px;
   line-height: 30px;
   font-weight: 300;
+  min-font-size: 16px;
 }
 
 .gallery__inner {
@@ -51,7 +54,7 @@
 
 .gallery__grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 cards in a row */
+  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
 }
 
@@ -61,7 +64,6 @@
   background: #fff;
   border-radius: 15px;
   font-family: "Times New Roman", sans-serif;
-  text-transform: uppercase;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -121,24 +123,27 @@
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 8px;
+  min-font-size: 16px;
 }
 
 .gallery__hover-content p {
   font-size: 1rem;
   margin-bottom: 8px;
   line-height: 1.5;
+  min-font-size: 16px;
 }
 
 .gallery__price {
   font-weight: bold;
   color: #aba655;
   margin-top: 8px;
+  min-font-size: 16px;
 }
 
 /* ===== Button ===== */
 .gallery__btn {
   width: auto;
-  padding: 12px 25px; /* Updated same as About section */
+  padding: 12px 25px;
   border-radius: 45px;
   font-family: "Oswald", sans-serif;
   font-weight: 500;
@@ -148,7 +153,7 @@
   border: none;
   outline: none;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.3s ease;
   box-shadow: 0 2px 8px rgba(145, 127, 81, 0.08);
   text-align: center;
   margin-top: 15px;
@@ -174,6 +179,7 @@
   font-size: 1.1em;
   font-weight: 600;
   text-align: center;
+  min-font-size: 16px;
 }
 
 /* ===== Floating Bubbles ===== */
@@ -198,7 +204,7 @@
   transform-origin: center;
 }
 
-/* ===== Bubble Positions ===== */
+/* Bubble Positions */
 .creation-bubble:nth-child(1)  { top: 10%; left: 5%; width: 12px; height: 12px; }
 .creation-bubble:nth-child(2)  { top: 20%; left: 25%; width: 15px; height: 15px; }
 .creation-bubble:nth-child(3)  { top: 30%; left: 45%; width: 10px; height: 10px; }
@@ -209,58 +215,42 @@
 .creation-bubble:nth-child(8)  { top: 80%; left: 55%; width: 16px; height: 16px; }
 .creation-bubble:nth-child(9)  { top: 90%; left: 75%; width: 12px; height: 12px; }
 .creation-bubble:nth-child(10) { top: 25%; left: 10%; width: 14px; height: 14px; }
-.creation-bubble:nth-child(11) { top: 35%; left: 30%; width: 12px; height: 12px; }
-.creation-bubble:nth-child(12) { top: 45%; left: 50%; width: 15px; height: 15px; }
-.creation-bubble:nth-child(13) { top: 55%; left: 70%; width: 10px; height: 10px; }
-.creation-bubble:nth-child(14) { top: 65%; left: 90%; width: 18px; height: 18px; }
-.creation-bubble:nth-child(15) { top: 15%; left: 40%; width: 12px; height: 12px; }
-.creation-bubble:nth-child(16) { top: 5%; left: 70%; width: 14px; height: 14px; }
-.creation-bubble:nth-child(17) { top: 85%; left: 20%; width: 10px; height: 10px; }
-.creation-bubble:nth-child(18) { top: 75%; left: 50%; width: 16px; height: 16px; }
-.creation-bubble:nth-child(19) { top: 65%; left: 30%; width: 12px; height: 12px; }
-.creation-bubble:nth-child(20) { top: 55%; left: 10%; width: 14px; height: 14px; }
+/* Add more bubbles as needed */
 
-/* Optional: add a few more bubbles for extra effect */
-.creation-bubble:nth-child(21) { top: 12%; left: 60%; width: 10px; height: 10px; }
-.creation-bubble:nth-child(22) { top: 48%; left: 20%; width: 18px; height: 18px; }
-.creation-bubble:nth-child(23) { top: 78%; left: 40%; width: 12px; height: 12px; }
-.creation-bubble:nth-child(24) { top: 33%; left: 80%; width: 14px; height: 14px; }
-.creation-bubble:nth-child(25) { top: 5%; left: 25%; width: 16px; height: 16px; }
-
-/* ===== Bubble Animation ===== */
+/* Bubble Animation */
 @keyframes creation-pulse {
   0% { transform: scale(1); opacity: 0.4; box-shadow: 0 0 6px rgba(238, 219, 127, 0.3); }
   50% { transform: scale(1.5); opacity: 0.8; box-shadow: 0 0 16px rgba(238, 219, 127, 0.7); }
   100% { transform: scale(1); opacity: 0.4; box-shadow: 0 0 6px rgba(238, 219, 127, 0.3); }
 }
+/* /* ===== Responsive ===== */
 
-/* ===== Responsive ===== */
-/* Extra Large Desktops (1400px+) */
+/* Extra Large Desktops (≥1400px) */
 @media (min-width: 1400px) {
   .gallery { padding: 100px 80px; gap: 80px; }
   .gallery__grid { grid-template-columns: repeat(4, 1fr); gap: 30px; }
   .gallery__image { height: 320px; }
-  .gallery__btn { padding: 14px 32px; font-size: 1.1rem; font-family: "Oswald", sans-serif; }
-  .gallery__subtitle { font-size: 32px; font-family: "Dancing Script", cursive; }
-  .gallery__title { font-size: 48px; font-family: "Times New Roman", Times, serif; }
-  .gallery__desc { font-size: 19px; line-height: 32px; font-family: "Times New Roman", Times, serif; }
-  .gallery__card-title { font-size: 18px; font-family: "Times New Roman", Times, serif; }
-  .gallery__hover-content h3 { font-size: 32px; font-family: "Times New Roman", Times, serif; }
-  .gallery__hover-content p { font-size: 19px; line-height: 32px; font-family: "Times New Roman", Times, serif; }
+  .gallery__btn { padding: 10px 20px; font-size: 18px; }
+  .gallery__subtitle { font-size: 32px; }
+  .gallery__title { font-size: 48px; }
+  .gallery__desc { font-size: 20px; line-height: 32px; }
+  .gallery__card-title { font-size: 20px; }
+  .gallery__hover-content h3 { font-size: 32px; }
+  .gallery__hover-content p { font-size: 20px; line-height: 32px; }
 }
 
 /* Large Desktops (1200px - 1399px) */
 @media (max-width: 1399px) and (min-width: 1200px) {
   .gallery { padding: 90px 70px; gap: 60px; }
-  .gallery__grid { grid-template-columns: repeat(4, 1fr); gap: 30px; }
+  .gallery__grid { grid-template-columns: repeat(4, 1fr); gap: 28px; }
   .gallery__image { height: 300px; }
-  .gallery__btn { padding: 12px 28px; font-size: 1.05rem; font-family: "Oswald", sans-serif; }
-  .gallery__subtitle { font-size: 25px; font-family: "Dancing Script", cursive; }
-  .gallery__title { font-size: 40px; font-family: "Times New Roman", Times, serif; }
-  .gallery__desc { font-size: 17px; line-height: 30px; font-family: "Times New Roman", Times, serif; }
-  .gallery__card-title { font-size: 16px; font-family: "Times New Roman", Times, serif; }
-  .gallery__hover-content h3 { font-size: 25px; font-family: "Times New Roman", Times, serif; }
-  .gallery__hover-content p { font-size: 17px; line-height: 30px; font-family: "Times New Roman", Times, serif; }
+  .gallery__btn { padding: 8px 18px; font-size: 17px; }
+  .gallery__subtitle { font-size: 28px; }
+  .gallery__title { font-size: 40px; }
+  .gallery__desc { font-size: 19px; line-height: 30px; }
+  .gallery__card-title { font-size: 19px; }
+  .gallery__hover-content h3 { font-size: 28px; }
+  .gallery__hover-content p { font-size: 19px; line-height: 30px; }
 }
 
 /* Laptops (992px - 1199px) */
@@ -268,13 +258,13 @@
   .gallery { padding: 80px 60px; gap: 55px; }
   .gallery__grid { grid-template-columns: repeat(3, 1fr); gap: 26px; }
   .gallery__image { height: 280px; }
-  .gallery__btn { padding: 12px 24px; font-size: 0.95rem; font-family: "Oswald", sans-serif; }
-  .gallery__subtitle { font-size: 24px; font-family: "Dancing Script", cursive; }
-  .gallery__title { font-size: 38px; font-family: "Times New Roman", Times, serif; }
-  .gallery__desc { font-size: 15px; line-height: 28px; font-family: "Times New Roman", Times, serif; }
-  .gallery__card-title { font-size: 19px; font-family: "Times New Roman", Times, serif; }
-  .gallery__hover-content h3 { font-size: 24px; font-family: "Times New Roman", Times, serif; }
-  .gallery__hover-content p { font-size: 16px; line-height: 28px; font-family: "Times New Roman", Times, serif; }
+  .gallery__btn { padding: 9px 18px; font-size: 17px; }
+  .gallery__subtitle { font-size: 26px; }
+  .gallery__title { font-size: 32px; }
+  .gallery__desc { font-size: 18px; line-height: 28px; }
+  .gallery__card-title { font-size: 18px; }
+  .gallery__hover-content h3 { font-size: 26px; }
+  .gallery__hover-content p { font-size: 18px; line-height: 28px; }
 }
 
 /* Tablets (768px - 991px) */
@@ -282,13 +272,13 @@
   .gallery { padding: 70px 50px; gap: 45px; }
   .gallery__grid { grid-template-columns: repeat(2, 1fr); gap: 22px; }
   .gallery__image { height: 250px; }
-  .gallery__btn { padding: 10px 22px; font-size: 0.95rem; font-family: "Oswald", sans-serif; }
-  .gallery__subtitle { font-size: 23px; font-family: "Dancing Script", cursive; }
-  .gallery__title { font-size: 35px; font-family: "Times New Roman", Times, serif; }
-  .gallery__desc { font-size: 15px; line-height: 26px; font-family: "Times New Roman", Times, serif; }
-  .gallery__card-title { font-size: 18px; font-family: "Times New Roman", Times, serif; }
-  .gallery__hover-content h3 { font-size: 23px; font-family: "Times New Roman", Times, serif; }
-  .gallery__hover-content p { font-size: 16px; line-height: 26px; font-family: "Times New Roman", Times, serif; }
+  .gallery__btn { padding: 9px 18px; font-size: 17px; }
+  .gallery__subtitle { font-size: 24px; }
+  .gallery__title { font-size: 35px; }
+  .gallery__desc { font-size: 17px; line-height: 26px; }
+  .gallery__card-title { font-size: 17px; }
+  .gallery__hover-content h3 { font-size: 24px; }
+  .gallery__hover-content p { font-size: 17px; line-height: 26px; }
 }
 
 /* Small Tablets & Large Mobile (576px - 767px) */
@@ -296,13 +286,13 @@
   .gallery { padding: 60px 40px; gap: 40px; }
   .gallery__grid { grid-template-columns: 1fr; gap: 20px; }
   .gallery__image { height: 220px; }
-  .gallery__btn { padding: 10px 20px; font-size: 0.9rem; font-family: "Oswald", sans-serif; }
-  .gallery__subtitle { font-size: 22px; font-family: "Dancing Script", cursive; }
-  .gallery__title { font-size: 32px; font-family: "Times New Roman", Times, serif; }
-  .gallery__desc { font-size: 15px; line-height: 24px; font-family: "Times New Roman", Times, serif; }
-  .gallery__card-title { font-size: 14px; font-family: "Times New Roman", Times, serif; }
-  .gallery__hover-content h3 { font-size: 22px; font-family: "Times New Roman", Times, serif; }
-  .gallery__hover-content p { font-size: 15px; line-height: 24px; font-family: "Times New Roman", Times, serif; }
+  .gallery__btn { padding: 8px 16px; font-size: 16px; }
+  .gallery__subtitle { font-size: 22px; }
+  .gallery__title { font-size: 24px; }
+  .gallery__desc { font-size: 16px; line-height: 24px; }
+  .gallery__card-title { font-size: 16px; }
+  .gallery__hover-content h3 { font-size: 22px; }
+  .gallery__hover-content p { font-size: 16px; line-height: 24px; }
 }
 
 /* Mobile Portrait (320px - 575px) */
@@ -310,13 +300,13 @@
   .gallery { padding: 50px 30px; gap: 35px; }
   .gallery__grid { grid-template-columns: 1fr; gap: 18px; }
   .gallery__image { height: 200px; }
-  .gallery__btn { padding: 9px 18px; font-size: 0.85rem; font-family: "Oswald", sans-serif; }
-  .gallery__subtitle { font-size: 20px; font-family: "Dancing Script", cursive; }
-  .gallery__title { font-size: 28px; font-family: "Times New Roman", Times, serif; }
-  .gallery__desc { font-size: 14px; line-height: 22px; font-family: "Times New Roman", Times, serif; }
-  .gallery__card-title { font-size: 14px; font-family: "Times New Roman", Times, serif; }
-  .gallery__hover-content h3 { font-size: 20px; font-family: "Times New Roman", Times, serif; }
-  .gallery__hover-content p { font-size: 14px; line-height: 22px; font-family: "Times New Roman", Times, serif; }
+  .gallery__btn { padding: 7px 14px; font-size: 16px; }
+  .gallery__subtitle { font-size: 20px; }
+  .gallery__title { font-size: 24px; }
+  .gallery__desc { font-size: 16px; line-height: 22px; }
+  .gallery__card-title { font-size: 16px; }
+  .gallery__hover-content h3 { font-size: 20px; }
+  .gallery__hover-content p { font-size: 16px; line-height: 22px; }
 }
 
 /* Extra Small Mobile (<320px) */
@@ -324,11 +314,11 @@
   .gallery { padding: 40px 20px; gap: 30px; }
   .gallery__grid { grid-template-columns: 1fr; gap: 15px; }
   .gallery__image { height: 180px; }
-  .gallery__btn { padding: 8px 15px; font-size: 0.8rem; font-family: "Oswald", sans-serif; }
-  .gallery__subtitle { font-size: 18px; font-family: "Dancing Script", cursive; }
-  .gallery__title { font-size: 24px; font-family: "Times New Roman", Times, serif; }
-  .gallery__desc { font-size: 12px; line-height: 20px; font-family: "Times New Roman", Times, serif; }
-  .gallery__card-title { font-size: 13px; font-family: "Times New Roman", Times, serif; }
-  .gallery__hover-content h3 { font-size: 18px; font-family: "Times New Roman", Times, serif; }
-  .gallery__hover-content p { font-size: 12px; line-height: 20px; font-family: "Times New Roman", Times, serif; }
+  .gallery__btn { padding: 6px 12px; font-size: 16px; }
+  .gallery__subtitle { font-size: 18px; }
+  .gallery__title { font-size: 24px; }
+  .gallery__desc { font-size: 16px; line-height: 20px; }
+  .gallery__card-title { font-size: 16px; }
+  .gallery__hover-content h3 { font-size: 18px; }
+  .gallery__hover-content p { font-size: 16px; line-height: 20px; }
 }

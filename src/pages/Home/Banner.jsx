@@ -1,10 +1,12 @@
+// Banner.jsx
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom"; // React Router Link
 import "../../style/Home/Banner.css";
-import img1 from "../../assets/34.jpg";
-import img2 from "../../assets/12.jpg";
-import img3 from "../../assets/34.jpg";
-import img4 from "../../assets/12.jpg";
+import img1 from "../../assets/Home/banner1.webp";
+import img2 from "../../assets/Home/banner2.webp";
+import img3 from "../../assets/Home/banner3.webp";
+import img4 from "../../assets/Home/banner4.webp";
+import ContactModal from "../Home/ContactModal"; // Make sure path is correct
 
 const slides = [
   {
@@ -29,7 +31,7 @@ const slides = [
     subtitle: "Every stitch tells your story.",
     button: "Book Now",
     img: img3,
-    link: "/contact",
+    link: "/contact", // Not used because we open modal
   },
   {
     id: 4,
@@ -43,6 +45,7 @@ const slides = [
 
 const Banner = () => {
   const [current, setCurrent] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -58,9 +61,19 @@ const Banner = () => {
         <div className="banner-text">
           <h1 key={slides[current].id}>{slides[current].title}</h1>
           <p>{slides[current].subtitle}</p>
-          <Link to={slides[current].link} className="btn-small">
-            {slides[current].button}
-          </Link>
+
+          {slides[current].button === "Book Now" ? (
+            <button
+              className="btn-small"
+              onClick={() => setIsModalOpen(true)}
+            >
+              {slides[current].button}
+            </button>
+          ) : (
+            <Link to={slides[current].link} className="btn-small">
+              {slides[current].button}
+            </Link>
+          )}
         </div>
 
         {/* Right side image */}
@@ -72,6 +85,12 @@ const Banner = () => {
           ></div>
         </div>
       </div>
+
+      {/* Contact Modal */}
+      <ContactModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </section>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "../style/About.css";
-import storyImg from "../assets/34.jpg"; // replace with your image
+import storyImg from "../../src/assets/about/about-page.webp"; // replace with your image
 import { FaLeaf, FaRibbon, FaUsers, FaLightbulb } from "react-icons/fa";
 
 const About = () => {
@@ -41,18 +41,23 @@ const About = () => {
         {/* Story Section */}
         <div className="about-story">
           <div className="story-image">
-            <img src={storyImg} alt="Our Story" />
+            <img
+              src={storyImg}
+              alt="Our Story"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <div className="story-text">
-            <h2 >Our Journey</h2>
+            <h2>Our Journey</h2>
             <p>
-              Founded by passionate artisans, Stitch Craft Aartistry is dedicated
-              to preserving the centuries-old craft of Aari embroidery. We combine
-              traditional skills with contemporary design to create timeless
-              pieces that celebrate heritage and innovation.
+              Founded by passionate artisans, Stitch Craft Aartistry is
+              dedicated to preserving the centuries-old craft of Aari
+              embroidery. We combine traditional skills with contemporary design
+              to create timeless pieces that celebrate heritage and innovation.
             </p>
 
-            <h2 >Our Mission</h2>
+            <h2>Our Mission</h2>
             <p>
               To empower local communities, craft high-quality embroidery, and
               offer designs that bring joy, elegance, and authenticity to every
@@ -103,7 +108,9 @@ const About = () => {
               <div className="timeline-number">1</div>
               <div className="timeline-content">
                 <h4>Trusted Quality</h4>
-                <p>Our products undergo strict quality checks for perfection.</p>
+                <p>
+                  Our products undergo strict quality checks for perfection.
+                </p>
               </div>
             </div>
 
@@ -128,7 +135,8 @@ const About = () => {
               <div className="timeline-content">
                 <h4>Skilled Artisans</h4>
                 <p>
-                  Our artisans are experts with years of experience in Aari work.
+                  Our artisans are experts with years of experience in Aari
+                  work.
                 </p>
               </div>
             </div>

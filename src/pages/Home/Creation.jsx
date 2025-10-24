@@ -1,10 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom"; // 🆕 Add this line
 import "../../style/Home/Creation.css";
-import img1 from "../../assets/qqq.jpg";
-import img2 from "../../assets/w.jpg";
-import img3 from "../../assets/blouse.jpg";
-import img4 from "../../assets/qqqqq.jpg";
+import img1 from "../../assets/Home/Top1.webp";
+import img2 from "../../assets/gallery/handmade/handmade-01.webp";
+import img3 from "../../assets/Home/bridal-7.webp";
+import img4 from "../../assets/Home/kids1.webp";
 
 const CreationData = [
   {
@@ -16,10 +16,10 @@ const CreationData = [
   },
   {
     src: img2,
-    title: "Designer Blouse",
+    title: "Handmade Jewels",
     content:
-      "Custom blouse with modern motifs and traditional stitches for a unique look.",
-    price: "₹1,500",
+      "Elegant handmade jewels crafted with precision and passion, blending traditional artistry with a modern touch.",
+    price: "₹150",
   },
   {
     src: img3,
@@ -67,7 +67,13 @@ const Creation = () => {
         <div className="gallery__grid">
           {CreationData.map((item, index) => (
             <div className="gallery__card" key={index}>
-              <img src={item.src} alt={item.title} className="gallery__image" />
+              <img
+                src={item.src}
+                alt={item.title}
+                className="gallery__image"
+                loading="lazy"
+                decoding="async"
+              />
               <div className="gallery__info">
                 <h3 className="gallery__card-title">{item.title}</h3>
               </div>

@@ -3,16 +3,16 @@ import "../../style/Home/Gallery.css";
 import { Container, Row, Col, Modal } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
-const images = [
-  "https://picsum.photos/id/1011/400/300",
-  "https://picsum.photos/id/1012/400/300",
-  "https://picsum.photos/id/1013/400/300",
-];
+// ✅ Correct image imports
+import handmade1 from "../../assets/Home/bridal-3.webp";
+import handmade2 from "../../assets/gallery/handmade/handmade-02.webp";
+import handmade3 from "../../assets/Home/bridal-12.webp";
+
+const images = [handmade1, handmade2, handmade3];
 
 const Gallery = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedImg, setSelectedImg] = useState(null);
-
   const navigate = useNavigate();
 
   const handleClick = (img) => {
@@ -27,7 +27,7 @@ const Gallery = () => {
 
   return (
     <div className="gallery-page-unique">
-      {/* Golden bubbles overlay */}
+      {/* ✨ Golden bubbles overlay */}
       <div className="gallery-bubble-container">
         {Array.from({ length: 20 }).map((_, idx) => (
           <span key={idx} className="gallery-bubble"></span>
@@ -35,7 +35,7 @@ const Gallery = () => {
       </div>
 
       <Container className="gallery-container-unique">
-        {/* Section Heading */}
+        {/* Section Header */}
         <div className="gallery-header-unique text-center">
           <h3 className="about__welcome">Experience Art in Every Stitch</h3>
           <h2 className="gallery-title-unique">
@@ -48,7 +48,7 @@ const Gallery = () => {
           </p>
         </div>
 
-        {/* Gallery Images */}
+        {/* 🖼️ Gallery Grid */}
         <Row className="gallery-grid-unique">
           {images.map((img, idx) => (
             <Col md={4} key={idx} className="gallery-col-unique">
@@ -58,8 +58,10 @@ const Gallery = () => {
               >
                 <img
                   src={img}
-                  alt={`Gallery ${idx}`}
+                  alt={`Gallery ${idx + 1}`}
                   className="gallery-img-unique"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="overlay">
                   <span className="plus-icon">+</span>
@@ -69,35 +71,39 @@ const Gallery = () => {
           ))}
         </Row>
 
-        {/* Button */}
-        <div className="gallery-action-unique">
+        {/* 🔘 Button */}
+        <div className="gallery-button-wrapper">
           <button className="gallery-button-unique" onClick={handleExploreMore}>
             Want to see the full collection
             <span className="gallery-arrow-unique">→</span>
           </button>
         </div>
 
-        {/* Modal */}
+        {/* 🪟 Modal */}
         <Modal
           show={showModal}
           onHide={() => setShowModal(false)}
           centered
           dialogClassName="gallery-modal-unique"
-          contentClassName="border-0 position-relative"
         >
-          <button
-            className="gallery-close-btn-unique"
-            onClick={() => setShowModal(false)}
-          >
-            ×
-          </button>
+          <Modal.Body className="text-center" style={{ position: "relative" }}>
+            {/* ✅ Close Button (fixed position, always visible) */}
+            <button
+              className="gallery-close-btn-unique"
+              onClick={() => setShowModal(false)}
+            >
+              ×
+            </button>
 
-          <Modal.Body className="text-center">
-            <img
-              src={selectedImg}
-              alt="Selected"
-              className="gallery-modal-img-unique"
-            />
+            {selectedImg && (
+              <img
+                src={selectedImg}
+                alt="Selected"
+                className="gallery-modal-img-unique"
+                loading="lazy"
+                decoding="async"
+              />
+            )}
           </Modal.Body>
         </Modal>
       </Container>

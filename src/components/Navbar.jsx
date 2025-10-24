@@ -1,21 +1,32 @@
 import React, { useState } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.webp";
 import "../style/Navbar.css";
 
 const Logo = () => {
   return (
-    <div className="logo-wrapper">
-      <img src={logo} alt="Logo" className="logo-animate" />
-      <div className="orbit-double"></div>
+    <div className="logo-container">
+      {/* Logo */}
+      <div className="logo-wrapper">
+        <img
+          src={logo}
+          alt="Logo"
+          className="logo-animate"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+
+      {/* Company Name */}
+      <span className="company-name">StitchCraft_Artistry</span>
     </div>
   );
 };
 
 const NavigationBar = () => {
   const location = useLocation();
-  const [expanded, setExpanded] = useState(false); // ✅ added
+  const [expanded, setExpanded] = useState(false);
 
   const navItems = [
     { name: "Home", path: "/" },
@@ -31,8 +42,8 @@ const NavigationBar = () => {
       className="navbar-custom"
       variant="dark"
       sticky="top"
-      expanded={expanded} // ✅ controlled state
-      onToggle={(isExpanded) => setExpanded(isExpanded)} // ✅ sync toggle state
+      expanded={expanded}
+      onToggle={(isExpanded) => setExpanded(isExpanded)}
     >
       <Container>
         <Navbar.Brand as={Link} to="/">
@@ -51,7 +62,7 @@ const NavigationBar = () => {
                 className={`nav-link-animate ${
                   location.pathname === item.path ? "active" : ""
                 }`}
-                onClick={() => setExpanded(false)} // ✅ close toggle after click
+                onClick={() => setExpanded(false)}
               >
                 {item.name}
               </Nav.Link>

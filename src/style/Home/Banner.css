@@ -17,7 +17,7 @@
 /* Background image with colored overlay */
 .banner-future {
   position: relative;
-  background: url("/src/assets/bg-01.jpg") center/cover no-repeat;
+  background: url("/src/assets/bg-05.jpg") center/cover no-repeat;
   z-index: 0;
 }
 
@@ -109,12 +109,14 @@
   align-items: center;
   position: relative;
 }
-
 .image-circle {
   width: 420px;
   height: 420px;
-  background-size: cover;
-  background-position: center;
+  background-image: url("/src/assets/your-image.webp");
+  background-size: cover; /* show full image without cropping */
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-color: #000; /* optional: background fill behind image */
   border-radius: 50%;
   position: relative;
   overflow: hidden;
@@ -122,6 +124,7 @@
   transition: transform 0.5s ease;
   animation: fadeRotate 1.5s ease forwards;
 }
+
 
 .image-circle:hover {
   transform: scale(1.05);

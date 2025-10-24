@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // ✅ Add this line
 import "../../style/Home/About.css";
-import aboutImg from "../../assets/q.jpg";
+import aboutImg from "../../assets/about/about-home.webp";
 
 const About = () => {
   const [showMore, setShowMore] = useState(false);
@@ -12,7 +12,13 @@ const About = () => {
       {/* Image Section */}
       <div className="about__image">
         <div className="about__photo">
-          <img src={aboutImg} alt="Aari Work" className="floating-img" />
+          <img
+            src={aboutImg}
+            alt="Aari Work"
+            className="floating-img"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       </div>
 

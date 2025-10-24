@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom"; // React Router link
 import "../style/Footer.css";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.webp";
 
 const Footer = () => {
   return (
@@ -21,6 +21,8 @@ const Footer = () => {
             src={logo}
             alt="STITCH CRAFT AARTISTRY Logo"
             className="footer-logo-img"
+            loading="lazy"
+            decoding="async"
           />
           <p className="footer-about">
             Welcome to <strong className="color">STITCH CRAFT AARTISTRY</strong>{" "}
@@ -131,7 +133,9 @@ const Footer = () => {
           <span className="color">© 2025 STITCH CRAFT AARTISTRY</span>, all
           rights reserved.
         </p>
-        <p>DESIGN BY EXPRESSO SOFT</p>
+        <p>
+          DESIGN BY <span className="company">AmiHive</span>
+        </p>
       </div>
     </footer>
   );

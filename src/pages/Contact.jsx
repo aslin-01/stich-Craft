@@ -14,13 +14,23 @@ import "react-toastify/dist/ReactToastify.css";
 import "../style/Contact.css";
 
 const fadeInUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  hidden: { opacity: 0, y: 10 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.2,
+      ease: [0.23, 1, 0.32, 1],
+    },
+  },
 };
 
 const staggerContainer = {
   visible: {
-    transition: { staggerChildren: 0.15 },
+    transition: {
+      staggerChildren: 0.03,
+      delayChildren: 0.02,
+    },
   },
 };
 
@@ -31,15 +41,13 @@ const ContactPage = () => {
   const sendEmail = async (e) => {
     e.preventDefault();
     setLoading(true);
-
     try {
       const result = await emailjs.sendForm(
-        "service_o59wlae", // ✅ Your EmailJS Service ID
-        "template_tkjrvbo", // ✅ Your Template ID
+        "service_o59wlae",
+        "template_tkjrvbo",
         form.current,
-        "Nh4aJduZkbE_arghu" // ✅ Your Public Key
+        "Nh4aJduZkbE_arghu"
       );
-
       if (result.text === "OK") {
         toast.success(
           "✅ Message sent successfully! We'll get back to you soon."
@@ -92,6 +100,11 @@ const ContactPage = () => {
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
+            transition={{
+              duration: 0.1,
+              ease: [0.23, 1, 0.32, 1],
+              staggerChildren: 0.02,
+            }}
           >
             {[
               {
@@ -107,7 +120,7 @@ const ContactPage = () => {
               {
                 icon: <FaMapMarkerAlt />,
                 text: "3/65, Kuruvilaikadu, Eraviputhoorkadai, Kattathurai",
-                href: "https://www.google.com/maps/place/Manu+Prem+M/@8.2924484,77.2541692,17z/data=!3m1!4b1!4m6!3m5!1s0x3b045590efcb6213:0x2db2fd4d83790292!8m2!3d8.2924484!4d77.2541692!16s%2Fg%2F11bv2l3__7?entry=ttu&g_ep=EgoyMDI1MTAwNi4wIKXMDSoASAFQAw%3D%3D",
+                href: "https://www.google.com/maps/place/Manu+Prem+M/@8.2924484,77.2541692,17z",
               },
               {
                 icon: <FaClock />,
@@ -166,6 +179,11 @@ const ContactPage = () => {
             initial="hidden"
             animate="visible"
             variants={fadeInUp}
+            transition={{
+              duration: 0.3,
+              ease: [0.4, 0, 0.2, 1],
+              delay: 0.1,
+            }}
           >
             <div className="input-box">
               <input type="text" name="user_name" required />
@@ -210,7 +228,6 @@ const ContactPage = () => {
           borderRadius: "12px",
         }}
       >
-        {/* Clickable top overlay */}
         <a
           href="https://www.google.com/maps/place/Manu+Prem+M/@8.2924484,77.2541692,17z"
           target="_blank"
@@ -220,18 +237,16 @@ const ContactPage = () => {
             top: 0,
             left: 0,
             width: "100%",
-            height: "50px", // height of clickable top area
+            height: "50px",
             zIndex: 10,
             cursor: "pointer",
           }}
         >
-          {/* Optional: add a text or icon on top */}
           <span style={{ color: "white", padding: "10px", fontWeight: "bold" }}>
             Open in Google Maps
           </span>
         </a>
 
-        {/* Actual map */}
         <iframe
           title="map"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3910.5344114293055!2d77.2541692!3d8.2924484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b045590efcb6213%3A0x2db2fd4d83790292!2sManu%20Prem%20M!5e0!3m2!1sen!2sin!4v1707367812345!5m2!1sen!2sin"
@@ -240,6 +255,7 @@ const ContactPage = () => {
           style={{ border: 0, borderRadius: "12px" }}
           allowFullScreen
           loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
         />
       </motion.div>
     </div>

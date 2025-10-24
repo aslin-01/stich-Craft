@@ -3,41 +3,38 @@ import { AiFillStar } from "react-icons/ai";
 import { FaQuoteLeft, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import "../../style/Home/Testimonials.css";
 
+// ✅ Import your local images
+import SophiaImg from "../../assets/test-1.webp";
+import DavidImg from "../../assets/test-2.webp";
+import EmilyImg from "../../assets/test-3.webp";
+
 const testimonials = [
   {
-    name: "Sophia Lee",
-    location: "Chennai, India",
+    name: "Aishwarya",
+    location: "Trivandrum, India",
     text: "Unique designs and excellent service. I loved every detail!",
     rating: 5,
-    image: "https://i.pravatar.cc/100?img=1",
+    image: SophiaImg,
   },
   {
-    name: "David John",
-    location: "Bangalore, India",
+    name: "Abirami",
+    location: "Trivandrum, India",
     text: "Professional and quick. The quality exceeded my expectations.",
     rating: 4,
-    image: "https://i.pravatar.cc/100?img=2",
+    image: DavidImg,
   },
   {
-    name: "Emily Clark",
-    location: "Mumbai, India",
+    name: "Adeline Prisci",
+    location: "Chennai, India",
     text: "Super happy with my order! Will definitely recommend.",
     rating: 5,
-    image: "https://i.pravatar.cc/100?img=3",
-  },
-  {
-    name: "Michael Brown",
-    location: "Hyderabad, India",
-    text: "The embroidery work was simply stunning and detailed.",
-    rating: 5,
-    image: "https://i.pravatar.cc/100?img=4",
+    image: EmilyImg,
   },
 ];
 
 const Testimonial = () => {
   const [current, setCurrent] = useState(0);
 
-  // Auto-slide every 5 seconds
   useEffect(() => {
     const timer = setInterval(() => handleNext(), 5000);
     return () => clearInterval(timer);
@@ -57,13 +54,13 @@ const Testimonial = () => {
       <h2 className="testimonial-title">
         What <span className="highlight">People Are Saying</span>
       </h2>
-      <p class="testimonial-description">
+      <p className="testimonial-description">
         We value our customers' feedback and love sharing their stories. Here's
         what they have to say about their experience with us.
       </p>
 
       <div className="testimonial-carousel-wrapper">
-        {/* Left arrow outside the card */}
+        {/* Left arrow */}
         <button
           className="testimonial-arrow outside left"
           onClick={handlePrev}
@@ -81,10 +78,13 @@ const Testimonial = () => {
           >
             {testimonials.map((t, index) => (
               <div className="testimonial-card" key={index}>
+                {/* ✅ Local image */}
                 <img
                   src={t.image}
                   alt={t.name}
-                  className="testimonial-avatar"
+                  className="testimonial-image"
+                  loading="lazy"
+                  decoding="async"
                 />
 
                 <div className="quote-icon-wrapper">
@@ -110,7 +110,7 @@ const Testimonial = () => {
           </div>
         </div>
 
-        {/* Right arrow outside the card */}
+        {/* Right arrow */}
         <button
           className="testimonial-arrow outside right"
           onClick={handleNext}

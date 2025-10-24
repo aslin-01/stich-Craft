@@ -1,22 +1,58 @@
-:root {
-  --yellow: #ffd60a;
-  --black: #000000;
-  --white: #ffffff;
+html {
+  scroll-behavior: smooth;
 }
 
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-  background: var(--white);
-  color: var(--black);
+/* Performance optimizations for smoother experience */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-main { display: block; }
+/* GPU acceleration for smoother animations */
+.service-section,
+.service-image,
+.glass-card,
+.contact-icon-box,
+.gallery-item-unique,
+.gallery-img-unique,
+.testimonial-card,
+.testimonial-image,
+.gallery__card,
+.gallery__image {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
 
-h1, h2, h3 { margin: 0 0 8px; }
-p { margin: 0 0 12px; }
+/* Exclude navbar logo from global optimizations */
+.logo-animate {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: visible;
+}
 
-a { color: inherit; }
+/* Optimize image loading */
+img:not(.logo-animate) {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  transform: translateZ(0);
+}
 
+/* Smooth scrolling for all elements */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Optimize transitions */
+.service-section,
+.glass-card,
+.contact-icon-box,
+.gallery-item-unique,
+.testimonial-card,
+.gallery__card {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
