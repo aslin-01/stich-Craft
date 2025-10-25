@@ -174,68 +174,82 @@
 /* =====================
    RESPONSIVE
 ===================== */
-
 /* <320px */
 @media (max-width: 319px) {
-  .banner-future { padding: 25px 10px; }
-  .banner-inner { flex-direction: column; text-align: center; gap: 20px; }
+  .banner-future {
+    padding: 15px 10px; /* reduced padding */
+    min-height: 300px; /* set smaller banner height */
+  }
+  .banner-inner { flex-direction: column; text-align: center; gap: 15px; }
   .banner-text { align-items: center; }
-  .banner-text h1 { font-size: 20px; }
+  .banner-text h1 { font-size: 30px; }
   .banner-text p { font-size: 12px; }
   .btn-small { width: 25%; font-size: 0.8rem; }
-  .image-circle { width: 200px; height: 200px; }
+  .image-circle { width: 180px; height: 180px; }
 }
 
 /* 320px - 575px */
 @media (max-width: 575px) and (min-width: 320px) {
-  .banner-future { padding: 30px 15px; }
-  .banner-inner { flex-direction: column; text-align: center; gap: 25px; }
+  .banner-future {
+    padding: 20px 15px; /* reduced */
+    min-height: 350px; /* smaller banner */
+  }
+  .banner-inner { flex-direction: column; text-align: center; gap: 20px; }
   .banner-text { align-items: center; }
-  .banner-text h1 { font-size: 24px; }
+  .banner-text h1 { font-size: 34px; }
   .banner-text p { font-size: 14px; }
-  .btn-small { width: 25%;padding: 5px 0; font-size: 0.85rem; }
-  .image-circle { width: 250px; height: 250px; }
+  .btn-small { width: 25%; padding: 5px 0; font-size: 0.85rem; }
+  .image-circle { width: 220px; height: 220px; }
 }
 
 /* 576px - 767px */
 @media (max-width: 767px) and (min-width: 576px) {
-  .banner-future { padding: 40px 20px; }
-  .banner-inner { flex-direction: column; text-align: center; gap: 30px; }
+  .banner-future {
+    padding: 30px 20px;
+    min-height: 400px; /* smaller */
+  }
+  .banner-inner { flex-direction: column; text-align: center; gap: 25px; }
   .banner-text { align-items: center; }
-  .banner-text h1 { font-size: 28px; }
+  .banner-text h1 { font-size: 38px; }
   .banner-text p { font-size: 15px; }
   .btn-small { width: 25%; padding: 7px 0; font-size: 0.9rem; }
-  .image-circle { width: 300px; height: 300px; }
+  .image-circle { width: 270px; height: 270px; }
 }
 
 /* 768px - 991px */
 @media (max-width: 991px) and (min-width: 768px) {
-  .banner-future { padding: 50px 30px; }
-  .banner-inner { flex-direction: column; text-align: center; gap: 35px; }
+  .banner-future {
+    padding: 40px 25px;
+    min-height: 450px; /* slightly reduced */
+  }
+  .banner-inner { flex-direction: column; text-align: center; gap: 30px; }
   .banner-text { align-items: center; }
-  .banner-text h1 { font-size: 32px; }
+  .banner-text h1 { font-size: 45px; }
   .banner-text p { font-size: 16px; }
   .btn-small { width: 25%; padding: 9px 0; font-size: 0.95rem; }
-  .image-circle { width: 350px; height: 350px; }
+  .image-circle { width: 320px; height: 320px; }
 }
 
 /* 992px - 1199px */
 @media (min-width: 992px) and (max-width: 1199px) {
-  .banner-future { padding: 50px 30px; }
+  .banner-future {
+    padding: 50px 30px;
+    min-height: 500px; /* standard height */
+  }
   .banner-inner { flex-direction: row; gap: 40px; }
   .banner-text { align-items: flex-start; text-align: left; }
   .banner-text h1 { font-size: 36px; }
   .banner-text p { font-size: 16px; }
-  .btn-small { 
-    width: 30%; 
-    padding: 10px 15px; 
-    font-size: 0.95rem; 
-  }
+  .btn-small { width: 30%; padding: 10px 15px; font-size: 0.95rem; }
   .image-circle { width: 350px; height: 350px; }
 }
+
 /* 1200px - 1399px */
 @media (max-width: 1399px) and (min-width: 1200px) {
-  .banner-future { padding: 70px 50px; }
+  .banner-future {
+    padding: 70px 50px;
+    min-height: 550px;
+  }
   .banner-inner { gap: 50px; }
   .btn-small { width: 25%; padding: 10px 0; font-size: 1.05rem; }
   .image-circle { width: 420px; height: 420px; }
@@ -243,8 +257,11 @@
 
 /* 1400px+ */
 @media (min-width: 1400px) {
-  .banner-future { padding: 80px 60px; }
+  .banner-future {
+    padding: 80px 60px;
+    min-height: 600px;
+  }
   .banner-inner { gap: 60px; }
-  .btn-small { width: 25%;padding: 10px 0; font-size: 1.1rem; }
+  .btn-small { width: 25%; padding: 10px 0; font-size: 1.1rem; }
   .image-circle { width: 480px; height: 480px; }
 }
